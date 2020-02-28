@@ -1,1 +1,3 @@
 https://www.tutofox.com/react/rest-api-crud-node-js-express-react-js-mysql-part-4-list/
+
+http://cristalcodevlog.com/2019/06/11/creando-un-datatable-utilizando-react-js/
