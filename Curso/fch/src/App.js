@@ -3,8 +3,10 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-import 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'
-import './vendor/sidebar.js'
+import TodoList from "./Components/TodoList";
+
+//import 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'
+//import './vendor/sidebar.js'
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -20,7 +22,7 @@ function App() {
     <Router>
       <div className="App">
         
-{/*         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <a class="navbar-brand" href="#" style={{color:'orange',fontWeight:'bold'}}>JmSoftCR</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -33,8 +35,8 @@ function App() {
             </ul>
             <Link class="btn btn-info "  to="/form">Add Employee</Link>
           </div>
-        </nav> */}
-          <div class="d-flex" id="wrapper">
+        </nav> 
+        {/*   <div class="d-flex" id="wrapper">
 
 // Sidebar
 <div class="bg-light border-right" id="sidebar-wrapper">
@@ -91,15 +93,17 @@ function App() {
 </div>
  //#page-content-wrapper 
 
-</div>
+</div> */}
 
         <div class="container py-4">
           <div class="row">
 
             
-            <Route path="/" exact component={List} />
+            {/* <Route path="/" exact component={List} />
             <Route path="/form" component={Form} />
-            <Route path="/edit/:employeeId" component={Edit} />
+            <Route path="/edit/:employeeId" component={Edit} /> */}
+
+            <TodoList />
           </div>
         </div>
 
