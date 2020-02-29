@@ -3,6 +3,9 @@ import Service from '../Services/service';
 import Paginator from '../Components/Paginator';
 import { pagination, filteredItem } from '../Util/dataTable';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 class TodoList extends React.Component {
   constructor(props) {
     super(props);
@@ -104,8 +107,32 @@ class TodoList extends React.Component {
               Find any data you want...
             </small>
           </div>
-          <div className='table-responsive'>
-            <table className='table'>
+          <div class="table-responsive">          
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Anna</td>
+        <td>Pitt</td>
+        <td>35</td>
+        <td>New York</td>
+        <td>USA</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+          {/* <div className='table-responsive'>
+            <table className='table table-hover'>
               <thead className='thead-dark'>
                 <tr>
                   <th scope='col'>ID</th>
@@ -127,7 +154,7 @@ class TodoList extends React.Component {
                   : null}
               </tbody>
             </table>
-          </div>
+          </div> */}
           {Object.keys(this.state.todoList).length !== 0 &&
           this.state.todoList.constructor === Object ? (
             <Paginator
@@ -139,6 +166,8 @@ class TodoList extends React.Component {
         </div>
       </div>
     );
+    
+
   }
 }
 
