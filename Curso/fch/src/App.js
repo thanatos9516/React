@@ -11,7 +11,7 @@ import TodoList from "./Components/TodoList";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Form from './module/form';
-import List from './module/list';
+//import List from './module/list';
 import Edit from './module/edit';
 
 
@@ -98,12 +98,11 @@ function App() {
         <div class="container py-4">
           <div class="row">
 
-            
-            {/* <Route path="/" exact component={List} />
+         
+            <Route path="/" exact component={TodoList} />
             <Route path="/form" component={Form} />
-            <Route path="/edit/:employeeId" component={Edit} /> */}
-
-            <TodoList />
+            <Route path="/edit/:idarticulo" component={Edit} />
+            
           </div>
         </div>
 

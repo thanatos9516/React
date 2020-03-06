@@ -6,6 +6,8 @@ import { pagination, filteredItem } from '../Util/dataTable';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
+import { Link } from "react-router-dom";
+
 class TodoList extends React.Component {
   constructor(props) {
     super(props);
@@ -63,6 +65,8 @@ class TodoList extends React.Component {
       <tr key={todo.idarticulo}>
           <th>{todo.idarticulo}</th>
           <td>{todo.nombre}</td>
+          <td><img src={todo.imagen} width="50" crossOrigin="anonymous" /></td>
+          {/* <td>{todo.imagen}</td> */}
           <td>{todo.descripcion}</td>
           <td>{todo.stock}</td>
           <td>{todo.categoria}</td>
@@ -71,7 +75,7 @@ class TodoList extends React.Component {
           <td>{todo.precio_costo}</td>
           <td>{todo.precio_venta}</td>
           <td>
-            <button class="btn btn-outline-info "> Edit </button>
+          <Link class="btn btn-outline-warning "  to={"/edit/"+todo.idarticulo} >Edit</Link>
           </td>
           <td>
             <button class="btn btn-outline-danger "> Delete </button>
@@ -83,7 +87,7 @@ class TodoList extends React.Component {
   async componentDidMount() {
     let service = new Service();
     let list = await service.list();
-    let todoList = pagination(1, 5, list);
+    let todoList = pagination(1, 10, list);
     this.setState({
       todoList,
       todoListRecords: list
@@ -107,7 +111,7 @@ class TodoList extends React.Component {
               Find any data you want...
             </small>
           </div>
-          <div class="table-responsive">          
+{/*           <div class="table-responsive">          
   <table class="table">
     <thead>
       <tr>
@@ -130,13 +134,14 @@ class TodoList extends React.Component {
       </tr>
     </tbody>
   </table>
-  </div>
-          {/* <div className='table-responsive'>
+  </div> */}
+           <div className='table-responsive'>
             <table className='table table-hover'>
               <thead className='thead-dark'>
                 <tr>
                   <th scope='col'>ID</th>
                   <th scope='col'>Name</th>
+                  <th scope='col'>Image</th>
                   <th scope='col'>Description</th>
                   <th scope='col'>Stock</th>
                   <th scope='col'>Category</th>
@@ -154,7 +159,7 @@ class TodoList extends React.Component {
                   : null}
               </tbody>
             </table>
-          </div> */}
+          </div> 
           {Object.keys(this.state.todoList).length !== 0 &&
           this.state.todoList.constructor === Object ? (
             <Paginator
