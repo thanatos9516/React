@@ -21,12 +21,12 @@ class EditComponent extends React.Component{
     }
   }
 
-  componentDidMount(){
+  async componentDidMount(){
     // parametro de id del usuario
     let idarticulo = this.props.match.params.idarticulo;
     // http://localhost:3000/employee/get/4
     const url = baseUrl+"/products/"+idarticulo
-    axios.get(url)
+    await axios.get(url)
     .then(res=>{
       if (res.data.success) {
         const data = res.data.data[0]
